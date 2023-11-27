@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:ital,wght@0,300;0,500;0,600;1,400&display=swap');
+        
+        body {
+            background-color: #3d3d3d;
+            color: #3d3d3d;
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+        }
+
+        .w3-left-align p {
+            margin: 0;
+        }
+
+        .w3-top .w3-bar {
+            letter-spacing: 4px;
+        }
+
+        .w3-bar-item {
+            padding: 14px 16px;
+        }
+
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 600px; /* Зміни висоту слайдів за вашим вибором */
+}
+
+img {
+    width: 100%;
+    height: 100%; /* Зміни висоту зображень за вашим вибором */
+    object-fit: cover; /* Додаємо, щоб зображення зберігало пропорції і займало всю площу, не враховуючи обрізку */
+    filter: brightness(50%);
+}
+
+.text {
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.text h3 {
+    color: #00E77F;
+}
+
+.text p {
+    color: #fff;
+}
+
+.numbertext {
+    display: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #4B84A8;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+.spacer {
+    height: 20px;
+}
+/******************картики********************/
+ *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .column {
+   flex: 0 0 calc(25% - 16px); /* Зменшено ширину колонок */
+      margin-bottom: 16px;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .column:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #aaa;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .title {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      font-family: 'Rubik', sans-serif;
+      text-align: center;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px;
+      color: black;
+      background-color: #5ba5c2;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #8dc6d9;
+    }
+
+    .custom-img {
+      width: 60%;
+      height: auto;
+      border-radius: 15px;
+      margin: 8px auto 0;
+      display: block;
+    }
+
+ @media screen and (max-width: 600px) {
+      .column {
+        flex: 0 0 calc(100% - 16px);
+      }
+    } 
+/**********************person************************/
+ /**********************person************************/
+.lectors-container {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box; /* Додаємо box-sizing, щоб врахувати padding в обчисленні ширини */
+}
+
+.person-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.person-card {
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.person-card:hover {
+  background-color: rgba(0, 140, 186, 0.1);
+}
+
+.person-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+    .person-name, .person-role, .person-description {
+      margin: 0;
+      color: #fff;
+    }
+
+    .person-name {
+      font-size: 24px;
+    }
+
+    .person-role {
+      font-size: 18px;
+    }
+
+    .person-description {
+      font-size: 16px;
+    }
+
+  /*****************контакти******************/
+ /*****************контакти******************/
+.contact-container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  margin: 0; /* додайте цей рядок для впливу на можливі margin у батьківського елемента */
+}
+
+/* Решта вашого CSS залишається без змін */
+
+
+/* Решта вашого CSS залишається без змін */
+
+
+.contact-info,
+.location-info {
+  max-width: 400px;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.location-info {
+  text-align: right;
+}
+
+.map-container {
+  width: 100%; /* Зроблено шириною 100% */
+  height: 300px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+/*******************сніг*******************/
+.intro,
+.intro a{
+  color:#fff;
+  font-family: 'Rubik', sans-serif;
+}
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+/* Demo Purpose Only*/
+.demo {
+  font-family: 'Raleway', sans-serif;
+	color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo a{
+  font-family: 'Raleway', sans-serif;
+color: #000;		
+}
+
+
+
+
+a {
+  text-decoration: none;
+}
+
+</style>
+</head>
+
+<body>
+   <div class="w3-left-align">
+        <p>ВоФК НУХТ</p>
+    </div>
+
+  <div id="about" class="w3-top">
+    <div class="w3-bar w3-black w3-padding w3-card">
+        <span class="w3-bar-item">ВоФК НУХТ</span>
+        <div class="w3-right w3-hide-small">
+            <a href="page001.html" class="w3-bar-item w3-button">Головна</a>
+            <a href="page002.html" class="w3-bar-item w3-button">Олімпійський резерв</a>
+            <a href="page004.html" class="w3-bar-item w3-button">Основи Web-дизайну</a>
+            <a href="#tttch" class="w3-bar-item w3-button">Викладачі курсу</a>
+            <a href="#contact" class="w3-bar-item w3-button">Контакти</a>
+        </div>
+    </div>
+</div>
+
+    <div id="about" class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://kalix.club/uploads/posts/2023-03/1677818855_kalix-club-p-estetik-oboi-na-noutbuk-vkontakte-68.jpg" alt="Nature">
+            <div class="text">
+                <h2 style="color: #6FFFFD; font-family: 'Rubik', sans-serif;">Зимова школа програмування </h3>
+                <p style="color: #fff; font-family: 'Rubik', sans-serif;">Хочеш зробити власний сайт?</p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Snow">
+            <div class="text">
+                <h2 style="color: #6FFFFD; font-family: 'Rubik', sans-serif;">Зимова школа програмування</h3>
+                <p style="color: #fff; font-family: 'Rubik', sans-serif;">Цікавишся сучасними технологіями?  </p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mountains">
+            <div class="text">
+                <h2 style="color: #6FFFFD; font-family: 'Rubik', sans-serif;">Зимова школа програмування</h3>
+                <p style="color: #fff; font-family: 'Rubik', sans-serif;">Плануєш вивчати комп'ютерні науки? </p>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 8px;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 7000); // Change slide every 2 seconds
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showSlides(); // Start the slideshow when the page loads
+        });
+    </script>
+
+
+
+    <!-- Безкоштовні курси зі створення web-сайтів -->
+<div style="text-align: center; padding: 20px;">
+    <h3 style="color: #658AE0; font-family: 'Rubik', sans-serif;">БЕЗКОШТОВНІ КУРСИ ЗІ СТВОРЕННЯ WEB-САЙТІВ
+</h3>
+    <p style="color: #fff; font-family: 'Rubik', sans-serif;">
+        <b>Записуйся на на курс, по завершенні якого ти навчишся створювати сучасні сайти.</b>
+    <br>
+    
+            Курс проводиться за підтримки фонду BrainBasket (https://brainbasket.org/). Навчальна програма базуються на курсах провідних навчальних закладів світу та визнаних відкритих освітніх ресурсів, зокрема University of London, Microsoft, W3Schools, Mozilla MDN web docs та ін. 
+    <br>
+             
+            Програма маю на меті навчити слухача основам розробки сучасних веб-сторінок із застосуванням найпоширеніших  методик  та  інструментів.
+    <br>
+               
+            Програма  викладаються  у  форматі  blended  learning  (змішане  навчаннѐ)  та  передбачає  16 аудиторних занять (15 навчальних + захист фінальних проектів слухачів) тривалістя 2 астрономічні години  кожне  протягом  8  тижнів.  Передбачаються,  що  на  кожне  таке  заняття  слухачі приходитимуть,  самостійно  опанувавши  передбачені  цією  програмою  обсяги  теоретичного матеріалу та (там де це передбачено) виконавши домашнє завдання. 
+    <br>
+              
+            В залежності від складності та логіки викладання, кожне аудиторне заняття покриває від 1 до 7 тем (в залежності від їх складності). За потреби деякі заняття викладач може ділити на окремі частини, зважаючи на успішність та рівень засвоєння матеріалу групою.   
+    <br>
+             
+            Кожне із занять містить практичні рекомендації та приклади, теоретичний матеріал для самостійного опрацювання слухачами та домашні завдання для них. 
+    <br>
+             
+            За підсумками проходження навчання в рамках проекту всі учасники повинні пройти випускне тестування та захистити фінальний проект.                            
+          
+    </p>
+</div>
+
+<!-----------------щоденник курсу--------------------->
+<div style="text-align: center; padding: 45px;">
+    <h3 style="color: #1CBBFF; font-family: 'Rubik', sans-serif;">Щоденник курсу</h3>
+    <p style="color: #fff; font-family: 'Rubik', sans-serif;">
+         Ми будемо разом вести щоденник повідомляючи Вам про тему і зміст заняття, домашні завдання з практики та теорії
+    </p>
+</div>
+<!----------------увага---------------->
+<div style="text-align: center; padding: 20px;">
+    <p style="color: #DB0F0F; font-family: 'Rubik', sans-serif;">
+        
+         УВАГА! Реєстрація на курси почнеться 21 грудня  і триватиме до 31 грудня 2018 р.
+         
+    </p>    
+
+</div>
+
+
+
+ <!----картки------>
+<!----картки------>
+
+
+  <div id="rrr" class="row">
+  <div class="column">
+    <div class="card">
+      <a href="page002.html">
+        <img class="custom-img" src="https://lonlinkhome.github.io/img/courses/olimp.png" alt="Jane">
+        <div class="container">
+          <h2 class="title">Олімпійський резерв</h2>
+          <p><a class="button" href="https://docs.google.com/forms/d/1BwtFrV4XgtPBQGq07gUtNokoLv0okKX4EeEsXcki8xI/viewform?edit_requested=true">Зареєструватись</a></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <a href="page003.html">
+        <img class="custom-img" src="https://lonlinkhome.github.io/img/courses/android.png" alt="Mike">
+        <div class="container">
+          <h2 class="title">Кодуємо Android</h2>
+          <p><a class="button" href="https://docs.google.com/forms/d/1CzIpWZ0VU1fe0NeXwfENdebMx7hxofWXA37uxGacKP0/viewform?edit_requested=true">Зареєструватись</a></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+ <div class="column">
+  <div class="card">
+    <a href="page004.html">
+      <img class="custom-img" src="https://lonlinkhome.github.io/img/courses/web.png" alt="Jane">
+      <div class="container">
+        <h2 class="title">Основи web-сайтів</h2>
+        <p><a class="button" href="https://docs.google.com/forms/d/1CzIpWZ0VU1fe0NeXwfENdebMx7hxofWXA37uxGacKP0/viewform?edit_requested=true">Зареєструватись</a></p>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<script>
+  function redirectToForm() {
+    window.location.href = "https://docs.google.com/forms/d/1BwtFrV4XgtPBQGq07gUtNokoLv0okKX4EeEsXcki8xI/viewform?edit_requested=true";
+  }
+</script>
+
+
+<!--------------лектори курсу------------------->
+<div class="lectors-container">
+  <div id="tttch" style="text-align: center; padding: 20px;">
+    <h3 style="color: #1CBBFF; font-family: 'Rubik', sans-serif;">ЛЕКТОРИ КУРСУ</h3>
+  </div>
+  <!-- Блок для лекторів курсу -->
+  <div class="person-container">
+    <div class="person-card">
+      <img src="https://www.refugee-action.org.uk/wp-content/uploads/2016/10/anonymous-user.png" alt="Avatar" class="person-image">
+      <h3 class="person-name">Галина Шепелюк</h3>
+      <h4 class="person-role">викладач</h4>
+      <p class="person-description">Організатор Зимової школи програмування</p>
+    </div>
+    <!-- Додайте інші лектори курсу, якщо необхідно -->
+  </div>
+</div>
+
+
+<!------------контакти------------->
+<div id="contact" class="contact-container">
+  <div class="contact-info">
+    <h3 style="font-family: 'Rubik', sans-serif;">КОНТАКТИ</h3>
+    <p><i class="fas fa-map-marker-alt icon"></i>вул. Кафедральна, 6, м. Луцьк, Україна, 43016 </p>
+    <p><i class="fas fa-phone-alt icon"></i>(0332) 721 217 - приймальна директора ВоК НУХТ</p>
+    <p><i class="fas fa-mobile-alt icon"></i>066 079 9579 - Шепелюк Галина Степанівна - організатор Зимової школи</p>
+    <p><i class="fas fa-envelope icon"></i>vocnuft@gmail.com</p>
+  </div>
+
+  <div class="location-info">
+    <h3 style="font-family: 'Rubik', sans-serif;">ДЕ МИ ЗНАХОДИМОСЬ</h3>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2525.0079312280086!2d25.31788127645511!3d50.73834177164859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47259992d8035519%3A0x18708846b592e1a4!2z0YPQuy4g0JrQsNGE0LXQtNGA0LDQu9GM0L3QsNGPLCA2LCDQm9GD0YbQuiwg0JLQvtC70YvQvdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA0MzAwMA!5e0!3m2!1sru!2sua!4v1700860632665!5m2!1sru!2sua" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+
+
+<!------------сніг------------------->
+<div class="snowflakes" aria-hidden="true">
+
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

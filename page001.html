@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:ital,wght@0,300;0,500;0,600;1,400&display=swap');
+        body {
+            background-color: #3d3d3d;
+            color: #3d3d3d;
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+        }
+
+        .w3-left-align p {
+            margin: 0;
+        }
+
+        .w3-top .w3-bar {
+            letter-spacing: 4px;
+        }
+
+        .w3-bar-item {
+            padding: 14px 16px;
+        }
+ .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 600px; /* Зміни висоту слайдів за вашим вибором */
+}
+
+img {
+    width: 100%;
+    height: 100%; /* Зміни висоту зображень за вашим вибором */
+    object-fit: cover; /* Додаємо, щоб зображення зберігало пропорції і займало всю площу, не враховуючи обрізку */
+    filter: brightness(50%);
+}
+
+.text {
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.text h3 {
+    color: #00E77F;
+}
+
+.text p {
+    color: #fff;
+}
+
+.numbertext {
+    display: none;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #4B84A8;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+.spacer {
+    height: 20px;
+}
+/*************************акордиони*****/
+/* Загальні стилі, не змінюються при зміні розміру екрану */
+.accordion-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.accordion {
+  background-color: #70B2E8;
+  color: #fff;
+  cursor: pointer;
+  padding: 14px 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 16px;
+  transition: 0.4s;
+  border-radius: 8px;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+.active,
+.accordion:hover {
+  background-color: #4B84A8;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #3d3d3d;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-radius: 0 0 8px 8px;
+  color: #fff;
+}
+
+/* Адаптація до екранів ширше 600px */
+@media screen and (min-width: 600px) {
+  .accordion-container {
+    width: 40%;
+  }
+
+  .accordion {
+    font-size: 18px;
+  }
+
+  .panel {
+    padding: 0 18px;
+  }
+}
+
+/* Адаптація до екранів ширше 900px */
+@media screen and (min-width: 900px) {
+  .accordion-container {
+    width: 30%;
+  }
+
+  .accordion {
+    font-size: 20px;
+  }
+
+  .panel {
+    padding: 0 24px; /* Збільшено відступи для ще більшого екрану */
+  }
+}
+
+
+
+    /************************************************************/
+
+ *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .column {
+   flex: 0 0 calc(25% - 16px); /* Зменшено ширину колонок */
+      margin-bottom: 16px;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .column:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #aaa;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .title {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      font-family: 'Rubik', sans-serif;
+      text-align: center;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px;
+      color: black;
+      background-color: #5ba5c2;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #8dc6d9;
+    }
+
+    .custom-img {
+      width: 60%;
+      height: auto;
+      border-radius: 15px;
+      margin: 8px auto 0;
+      display: block;
+    }
+
+ @media screen and (max-width: 600px) {
+      .column {
+        flex: 0 0 calc(100% - 16px);
+      }
+    } 
+/*****************************наші досягнення********************/
+.custom-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.custom-column {
+  flex: 0 0 calc(100% - 16px); /* Зменшено ширину колонок для утримання 1 карточки в ряду */
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.custom-column:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.custom-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #e5f4f9; /* Зміна кольору фону карток на світло-зелений */
+  width: 100%;
+}
+
+.custom-container {
+  padding: 16px;
+  margin-top: 16px; /* Додано простір зверху */
+}
+
+.custom-title {
+  color: #2f8db3; /* Зміна кольору заголовку на темно-зелений */
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.custom-image {
+  width: 80%; /* Зменшено ширину зображень */
+  height: auto;
+  margin: 8px auto 0;
+  display: block;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 600px) {
+  .custom-column {
+    flex: 0 0 calc(33.33% - 16px);
+  }
+}
+
+  /*********************person***********************/
+.person-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.person-card {
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  flex: 0 0 calc(33.33% - 20px); /* Зменшено ширину карток для утримання 3 карток в ряду */
+}
+
+.person-card:hover {
+  background-color: rgba(0, 140, 186, 0.1);
+}
+
+.person-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.person-name,
+.person-role,
+.person-description {
+  margin: 0;
+  color: #fff;
+}
+
+.person-name {
+  font-size: 24px;
+}
+
+.person-role {
+  font-size: 18px;
+}
+
+.person-description {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .person-card {
+    flex: 0 0 calc(100% - 20px); /* Змінено ширину карток для відображення по одній в ряду при зменшеному екрані */
+  }
+}
+
+
+    /****************************контакти************************/
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  background-color: #505052; /* Заданий колір фону */
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* Додано для правильного відображення при зменшенні екрану */
+}
+
+.contact-info,
+.location-info {
+  max-width: 400px;
+  flex: 1; /* Додано для рівномірного розподілу простору між .contact-info і .location-info */
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.location-info {
+  text-align: right;
+  margin-top: 10px; /* Додано відступ між .contact-info і .location-info */
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/*******************сніг*******************/
+.intro,
+.intro a{
+  color:#fff;
+  font-family: 'Rubik', sans-serif;
+}
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+/* Demo Purpose Only*/
+.demo {
+  font-family: 'Raleway', sans-serif;
+	color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo a{
+  font-family: 'Raleway', sans-serif;
+color: #000;		
+}
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="w3-left-align">
+        <p>ВоФК НУХТ</p>
+    </div>
+
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-padding w3-card">
+            <span class="w3-bar-item">ВоФК НУХТ</span>
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">Головна</a>
+                <a href="#menu" class="w3-bar-item w3-button">Секція Зимової школи</a>
+                <a href="#rrr" class="w3-bar-item w3-button">Реєстрація</a>
+                <a href="#ddd" class="w3-bar-item w3-button">Наші досягнення</a>
+                <a href="#contact" class="w3-bar-item w3-button">Контакти</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="slideshow-container">
+        <div class="mySlides fade">
+            <a href="page002.html">
+                <img src="https://kalix.club/uploads/posts/2023-03/1677818855_kalix-club-p-estetik-oboi-na-noutbuk-vkontakte-68.jpg" alt="Nature">
+                <div class="text">
+                    <h2 style="color: #6FFFFD; font-family: 'Rubik', sans-serif;">Зимова школа програмування</h2>
+                    <p style="color: #fff; font-family: 'Rubik', sans-serif;">Олімпійський резерв</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="page003.html">
+                <img src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Snow">
+                <div class="text">
+                    <h2 style="color: #6FFFFD; font-family: 'Rubik', sans-serif;">Зимова школа програмування</h2>
+                    <p style="color: #fff; font-family: 'Rubik', sans-serif;">Кодуємо Android</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="mySlides fade">
+            <a href="page004.html">
+                <img src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mountains">
+                <div class="text">
+                    <h2 style="color: #6FFFFD; font-family: 'Rubik', sans-serif;">Зимова школа програмування</h2>
+                    <p style="color: #fff; font-family: 'Rubik', sans-serif;">Основи web-дизайну</p>
+                </div>
+            </a>
+        </div>
+
+        <div style="text-align:center; margin-top: 8px;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+   <script>
+    
+let slideIndex = 0;
+    function showSlides() {
+  
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 7000); // Change slide every 2 seconds
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        showSlides(); // Start the slideshow when the page loads
+    });
+</script>
+    </div>
+
+    <div class="spacer"></div> <!-- Додано відступ -->
+
+    <div  id="menu" style="text-align: center; padding: 20px;">
+        <h3 style="color: #658AE0;"><b>ПРО ЗИМОВУ ШКОЛУ ПРОГРАМУВАННЯ</b></h3>
+        <p style="color: #fff;"><b>Волинський коледж Національного університету харчових технологій запрошує учнів 9-11 класів,,<br>
+                учнів професійно-технічних училищ та студентів технікумів та коледжів м. Луцьк взяти участь в II Зимовій
+                школі програмування.</b></p>
+        <p style="color: #fff;">
+
+            Мета школи - надати школярам, учням та студентам можливіть проявити свою майстерність у мистецтві<br>
+            розробки алгоритмів та складанні програм мовами високого рівня, підвищити рівнь знань з предметів, <br>
+            які передбачають програмування та алгоритмізацію.
+        </p>
+        <p style="color: #fff;">
+
+            Початок занять - 2 січня 2019 року.<br>
+            Тривалість занять - 3 тижні: 9 занять по 2 години в день. <br>
+            Місце проведення Зимової школи - мультимедыйні навчальні класи та комп'ютерні лабораторії Волинського
+            коледжу НУХТ. <br>
+            Заняття проводяться в трьох секціях.
+
+        </p>
+    </div>
+
+    <div class="spacer"></div> <!-- Додано відступ -->
+
+   <div style="text-align: center; margin-bottom: 20px;">
+        <h3>Програма курсів</h3>
+    </div>
+    <!-------------------------------------------------------акордеон---->
+      <div class="accordion-container" style="margin: 0 auto; text-align: center;">
+    <button class="accordion">
+      "Секція Кодування андроїд"
+    </button>
+    <div class="panel">
+      <p>
+        У секцію <b>"Кодування андроїд"</b> запрошують учнів 9-11 класів, що немають попереднього досвіду програмування, але мають власний смартфон на платформі Андроїд і бажають навчитися створювати мобільні додатки. Основне завдання секції ознайомити учасників школи з елементами інтерфейсу середовища MIT App Inventor; сформувати поняття проекту та його складових, навички роботи з елементами інтерфейсу; алгоритм створення, тестування, збереження, публікації та встановлення додатку проекту на смартфон. Наприкінці навчання планується проведення WEB-квесту, результати якого будуть враховуватися при формуванні груп на наступні роки навчання.
+      </p>
+    </div>
+<!----------------------акордеон-------------------------->
+    <button class="accordion">
+      Секція "Олімпійський резерв"
+    </button>
+    <div class="panel">
+      <p>
+        Секція <b>"Олімпійський резерв"</b> запрошує учнів та студентів, що мають базові знання мови програмування С++ (структуру програми та базові керуючі конструкції). Основне завдання секції підготовка до участі у міжнародній олімпіаді з програмування «The ACM-ICPC International Collegiate Programming Contest», що проводяться під егідою Асоціації обчислювальної техніки (ACM) за участі університета Бейлора (https://icpc.baylor.edu). Заняття проводять студенти фіналісти Всекураїнської олімпіади з програмування та випускники - учасники Міжнародної  олімпіади.
+        Наприкінці навчання проводиться олімпіада зимової школи. Фіналісти отримують сертифікати, що дозволяють отримати додаткові бали на екзамен. 
+      </p>
+    </div>
+
+    <button class="accordion">
+      Секція "Основи Web-дизайну"
+    </button>
+    <div class="panel">
+      <p>
+        Секція <b>"Основи Web-дизайну"</b> запрошує учнів та студентів, що бажають створити власний сайт.  Основне завдання секції надати базові знання із  основ web-розробки, зокрема курс покриватиме такі теми як перші кроки по запуску сайту, DNS та хостінг, HTML-CSS та JavaScript. <br> Курс проводиться за підтримки фонду BrainBasket (https://brainbasket.org/). Навчальна програма базуються на курсах провідних навчальних закладів світу та визнаних відкритих освіті ресурсів, зокрема University of London, Microsoft, W3Schools, Mozilla MDN web docs та ін. <br> Заняття в рамках проекту проходитимуть у форматі змішаного навчання (онлайн+офлайн), що передбачає самостійну роботу з лекційним матеріалом, який доступний онлайн, і аудиторну роботу під керівництвом менторів на базі Зимової школи.
+      </p>
+    </div>
+  </div>
+a {
+  text-decoration: none;
+}
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+
+
+  </script>
+<!------------------------світяшка---------------------->
+<div style="text-align: center; padding: 20px;">
+  <p style="color: #DB0F0F; font-family: 'Rubik', sans-serif;">УВАГА! Реєстрація на курси почнеться 21 грудня і триватиме до 31 грудня 2023 р.</p></div>
+<!----картки------>
+
+
+<div id="rrr" class="row">
+  <div class="column">
+    <div class="card">
+      <a href="https://siteeeeeee.w3spaces.com/site222222222222222.html">
+        <img class="custom-img" src="https://lonlinkhome.github.io/img/courses/olimp.png" alt="Jane">
+        <div class="container">
+          <h2 class="title">Олімпійський резерв</h2>
+          <p><a class="button" href="https://docs.google.com/forms/d/1BwtFrV4XgtPBQGq07gUtNokoLv0okKX4EeEsXcki8xI/viewform?edit_requested=true">Зареєструватись</a></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <a href="https://siteeeeeee.w3spaces.com/android_code.html">
+        <img class="custom-img" src="https://lonlinkhome.github.io/img/courses/android.png" alt="Mike">
+        <div class="container">
+          <h2 class="title">Кодуємо Android</h2>
+          <p><a class="button" href="https://docs.google.com/forms/d/1CzIpWZ0VU1fe0NeXwfENdebMx7hxofWXA37uxGacKP0/viewform?edit_requested=true">Зареєструватись</a></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+ <div class="column">
+  <div class="card">
+    <a href="https://siteeeeeee.w3spaces.com/web-site.html">
+      <img class="custom-img" src="https://lonlinkhome.github.io/img/courses/web.png" alt="Jane">
+      <div class="container">
+        <h2 class="title">Основи web-сайтів</h2>
+        <p><a class="button" href="https://docs.google.com/forms/d/1CzIpWZ0VU1fe0NeXwfENdebMx7hxofWXA37uxGacKP0/viewform?edit_requested=true">Зареєструватись</a></p>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+
+
+<!---------------------------наші досягнення------------------------>
+<!---------------------------наші досягнення------------------------>
+<!---------------------------наші досягнення------------------------>
+<div id="ddd" class="ddddddddddd" style="text-align: center; padding: 20px; background-color: #666668; color: #6FBA6B; font-family: 'Rubik', sans-serif;  width: 100%;">
+    <h3 style="color: black; font-family: 'Rubik', sans-serif;">НАШІ ДОСЯГНЕННЯ</h3>
+<div class="custom-row">
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="Jane" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 1</h2>
+        <p>Основний текст для картки 1</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="Mike" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 2</h2>
+        <p>Основний текст для картки 2</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="John" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 3</h2>
+        <p>Основний текст для картки 3</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="Jane" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 4</h2>
+        <p>Основний текст для картки 4</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="Mike" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 5</h2>
+        <p>Основний текст для картки 5</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="John" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 6</h2>
+        <p>Основний текст для картки 6</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="Jane" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 7</h2>
+        <p>Основний текст для картки 7</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="Mike" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 8</h2>
+        <p>Основний текст для картки 8</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="custom-column">
+    <div class="custom-card">
+      <img src="https://via.placeholder.com/800x600" alt="John" class="custom-image">
+      <div class="custom-container">
+        <h2 class="custom-title">Заголовок 9</h2>
+        <p>Основний текст для картки 9</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="lectors-container">
+  <!-- Блок для лекторів курсу -->
+  <div class="person-container">
+    <div class="person-card">
+      <img src="https://www.refugee-action.org.uk/wp-content/uploads/2016/10/anonymous-user.png" alt="Avatar" class="person-image">
+      <h3 class="person-name">Галина Шепелюк</h3>
+      <h4 class="person-role">викладач</h4>
+      <p class="person-description">Організатор Зимової школи програмування</p>
+    </div>
+    <!-- Додайте інші лектори курсу, якщо необхідно -->
+  </div>
+</div>
+
+<!-- Блок для персон -->
+<div class="persons-container">
+  <div class="person-container">
+    <div class="person-card">
+      <img src="https://www.refugee-action.org.uk/wp-content/uploads/2016/10/anonymous-user.png" alt="Avatar" class="person-image">
+      <h3 class="person-name">Максімик Ольга</h3>
+      <h4 class="person-role">студентка</h4>
+
+    </div>
+    <!-- Додайте інші персони, якщо необхідно -->
+  </div>
+</div>
+
+<!------------контакти------------->
+
+<div id="contact" class="contact-container">
+  <div class="contact-info">
+    <h3>КОНТАКТИ</h3>
+    <p><i class="fas fa-map-marker-alt icon"></i>вул. Кафедральна, 6, м. Луцьк, Україна, 43016 </p>
+    <p><i class="fas fa-phone-alt icon"></i>(0332) 721 217 - приймальна директора ВоК НУХТ</p>
+    <p><i class="fas fa-mobile-alt icon"></i>066 079 9579 - Шепелюк Галина Степанівна - організатор Зимової школи</p>
+    <p><i class="fas fa-envelope icon"></i>vocnuft@gmail.com</p>
+  </div>
+
+  <div class="location-info">
+    <h3>ДЕ МИ ЗНАХОДИМОСЬ</h3>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2525.0079312280086!2d25.31788127645511!3d50.73834177164859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47259992d8035519%3A0x18708846b592e1a4!2z0YPQuy4g0JrQsNGE0LXQtNGA0LDQu9GM0L3QsNGPLCA2LCDQm9GD0YbQuiwg0JLQvtC70YvQvdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCA0MzAwMA!5e0!3m2!1sru!2sua!4v1700860632665!5m2!1sru!2sua" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+<!------------сніг------------------->
+<div class="snowflakes" aria-hidden="true">
+
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  
+  </div>
+</div>
+
+</body>
+
+</html>
